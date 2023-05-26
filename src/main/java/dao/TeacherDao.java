@@ -55,7 +55,7 @@ public class TeacherDao {
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();
 		// sql 전송 후 결과셋 반환받아 리스트에 저장
-		String sql = "SELECT t.teacher_no teacherNo, t.teacher_id teacherId, t.teacher_name teacherName, t.teacher_history teaherHistory, t.updatedate, t.createdate, nvl(GROUP_CONCAT(s.subject_name SEPARATOR' | '), ' ') teacherSubjectName FROM teacher t LEFT OUTER JOIN teacher_subject ts ON t.teacher_no = ts.teacher_no LEFT OUTER JOIN subject s ON ts.subject_no = s.subject_no GROUP BY t.teacher_no, t.teacher_id, t.teacher_name WHERE teacher_no = ?";
+		String sql = "SELECT t.teacher_no teacherNo, t.teacher_id teacherId, t.teacher_name teacherName, t.teacher_history teaherHistory, t.updatedate, t.createdate, nvl(GROUP_CONCAT(s.subject_name SEPARATOR' | '), ' ') teacherSubjectName FROM teacher t LEFT OUTER JOIN teacher_subject ts ON t.teacher_no = ts.teacher_no LEFT OUTER JOIN subject s ON ts.subject_no = s.subject_no WHERE t.teacher_no = ? GROUP BY t.teacher_no, t.teacher_id, t.teacher_name";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setInt(1, teacherNo);
 		ResultSet rs = stmt.executeQuery();
