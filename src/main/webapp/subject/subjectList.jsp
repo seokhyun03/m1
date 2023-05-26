@@ -49,7 +49,6 @@
 			<tr>
 				<th class="table-dark">이름</th>
 				<th class="table-dark">시수</th>
-				<th class="table-dark">삭제</th>
 			</tr>
 			<%
 				for(Subject s : list) {
@@ -61,13 +60,6 @@
 							</a>
 						</td>
 						<td><%=s.getSubjectTime()%></td>
-						<td>
-							<div class="d-grid">
-								<a href="<%=request.getContextPath()%>/subject/deleteSubjectAction.jsp?subjectNo=<%=s.getSubjectNo()%>">
-									<button type="button" class="btn btn-dark btn-block">삭제</button>
-								</a>
-							</div>
-						</td>
 					</tr>
 			<%		
 				}

@@ -59,6 +59,7 @@
 				</tr>
 			</table>
 			<button type="submit" class="btn btn-dark btn-block">수정</button>
+			<button type="submit" formaction="<%=request.getContextPath()%>/subject/deleteSubjectAction.jsp" class="btn btn-dark btn-block">삭제</button>
 		</form>
 	</div>
 </body>
