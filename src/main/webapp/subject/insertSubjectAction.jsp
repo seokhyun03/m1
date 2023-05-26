@@ -3,6 +3,8 @@
 <%@ page import="dao.*" %>
 <%@ page import="java.util.*" %>
 <%
+	// 인코딩 설정
+	request.setCharacterEncoding("utf-8");
 	// 요청값 유효성 검사
 	if(request.getParameter("subjectName") == null 
 		|| request.getParameter("subjectTime") == null 
