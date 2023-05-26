@@ -14,7 +14,7 @@ public class SubjectDao {
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();
 		// sql 전송 후 결과셋 반환받아 리스트에 저장
-		PreparedStatement stmt = conn.prepareStatement("SELECT subject_no subjectNo, subject_name subjectName, subject_time subjectTime, updatedate, createdate FROM subject WHERE subject_no BETWEEN ? AND ?");
+		PreparedStatement stmt = conn.prepareStatement("SELECT subject_no subjectNo, subject_name subjectName, subject_time subjectTime, updatedate, createdate FROM subject LIMIT ?, ?");
 		stmt.setInt(1, beginRow);
 		stmt.setInt(2, rowPerPage);
 		ResultSet rs = stmt.executeQuery();
