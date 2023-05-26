@@ -6,7 +6,7 @@
 	// 요청값 유효성 검사
 	if(request.getParameter("teacherNo") == null  
 		|| request.getParameter("teacherNo").equals("")) {
-		// subjectList.jsp으로
+		// teacherList.jsp으로
 		response.sendRedirect(request.getContextPath() + "/teacher/teacherList.jsp");
 		return;
 	}
