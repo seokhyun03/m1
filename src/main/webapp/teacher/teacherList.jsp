@@ -41,7 +41,7 @@
 	<div class="container">
 	<h1>강사 리스트</h1>
 	<div class="d-grid">
-		<a href="<%=request.getContextPath()%>/">
+		<a href="<%=request.getContextPath()%>/teacher/insertTeacher.jsp">
 			<button type="button" class="btn btn-dark btn-block">추가</button>
 		</a>
 	</div>

@@ -105,4 +105,19 @@ public class TeacherDao {
 		
 		return row;
 	}
+	// 강사 추가
+	public int insertTeacher(Teacher teacher) throws Exception {
+		// sql 실행시 영향받은 행의 수 
+		int row = 0;
+		// db 접속
+		DBUtil dbUtil = new DBUtil();
+		Connection conn = dbUtil.getConnection();
+		// sql 전송 후 영향받은 행의 수 반환받아 저장
+		PreparedStatement stmt = conn.prepareStatement("INSERT INTO teacher(teacher_id, teacher_name, teacher_history, updatedate, createdate) VALUES(?,?,?,NOW(),NOW())");
+		stmt.setString(1, teacher.getTeacherId());
+		stmt.setString(2, teacher.getTeacherName());
+		stmt.setString(3, teacher.getTeacherHistory());
+		row = stmt.executeUpdate();
+		return row;
+	}
 }
